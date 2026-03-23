@@ -568,6 +568,8 @@ function createFlowers() {
     const w = canvas.width / window.devicePixelRatio;
     const h = canvas.height / window.devicePixelRatio;
     const baseY = h * 0.85;
+    const isMobile = w < 500;
+    const sizeScale = isMobile ? 0.65 : 1;
 
     const positions = [
         { x: w * 0.06, size: 18, delay: 0.5 },
@@ -581,19 +583,25 @@ function createFlowers() {
         { x: w * 0.78, size: 25, delay: 0.4 },
         { x: w * 0.86, size: 19, delay: 0.9 },
         { x: w * 0.94, size: 17, delay: 0.5 },
-        // Second row
-        { x: w * 0.10, size: 15, delay: 1.2 },
-        { x: w * 0.26, size: 16, delay: 1.0 },
-        { x: w * 0.74, size: 14, delay: 1.1 },
-        { x: w * 0.90, size: 15, delay: 1.4 },
     ];
 
+    // Add second row only on larger screens
+    if (!isMobile) {
+        positions.push(
+            { x: w * 0.10, size: 15, delay: 1.2 },
+            { x: w * 0.26, size: 16, delay: 1.0 },
+            { x: w * 0.74, size: 14, delay: 1.1 },
+            { x: w * 0.90, size: 15, delay: 1.4 },
+        );
+    }
+
     positions.forEach(p => {
-        flowers.push(new Flower(p.x, baseY + (Math.random() * 10 - 5), p.size, p.delay));
+        flowers.push(new Flower(p.x, baseY + (Math.random() * 10 - 5), p.size * sizeScale, p.delay));
     });
 
-    // Large center Gerbera
-    gerberaFlowers.push(new GerberaFlower(w * 0.5, baseY - 5, 60, 0.0));
+    // Large center Gerbera - scale for mobile
+    const gerberaSize = isMobile ? 38 : 60;
+    gerberaFlowers.push(new GerberaFlower(w * 0.5, baseY - 5, gerberaSize, 0.0));
 }
 createFlowers();
 window.addEventListener('resize', () => {
