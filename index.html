@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💙 Nuestro Amor 💙</title>
+    <meta name="description" content="Un contador especial de nuestro amor juntos">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particles background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Fireflies -->
+    <div class="fireflies" id="fireflies"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Heart decoration top -->
+        <div class="hearts-top">
+            <span class="floating-heart" style="--delay: 0s; --x: 10%;">💙</span>
+            <span class="floating-heart" style="--delay: 1.5s; --x: 25%;">💜</span>
+            <span class="floating-heart" style="--delay: 3s; --x: 50%;">💙</span>
+            <span class="floating-heart" style="--delay: 0.8s; --x: 75%;">💜</span>
+            <span class="floating-heart" style="--delay: 2s; --x: 90%;">💙</span>
+        </div>
+
+        <header class="header">
+            <h1 class="title">Para Ti Mi Jackeline Preciosa 💙</h1>
+            <p class="subtitle">Cada segundo a tu lado es un regalo</p>
+        </header>
+
+        <!-- Flower garden -->
+        <div class="garden">
+            <canvas id="flowerCanvas"></canvas>
+        </div>
+
+        <!-- Anniversary counter -->
+        <div class="counter-section">
+            <h2 class="counter-title">Juntos Desde</h2>
+            <p class="anniversary-date">12 de Marzo de 2024</p>
+            
+            <div class="counter-grid">
+                <div class="counter-card">
+                    <div class="counter-value" id="years">0</div>
+                    <div class="counter-label">Años</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-value" id="months">0</div>
+                    <div class="counter-label">Meses</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-value" id="days">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-value" id="hours">0</div>
+                    <div class="counter-label">Horas</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-value" id="minutes">0</div>
+                    <div class="counter-label">Minutos</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-value" id="seconds">0</div>
+                    <div class="counter-label">Segundos</div>
+                </div>
+            </div>
+
+            <div class="total-stats">
+                <div class="stat">
+                    <span class="stat-icon">💙</span>
+                    <span class="stat-text"><span id="totalDays">0</span> días de amor</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">💋</span>
+                    <span class="stat-text"><span id="totalHours">0</span> horas juntos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">✨</span>
+                    <span class="stat-text"><span id="totalMinutes">0</span> minutos mágicos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Love message -->
+        <div class="love-message">
+            <div class="message-card">
+                <p class="message-text">"Contigo cada momento es especial, cada segundo cuenta, y cada latido de mi corazón te pertenece."</p>
+                <div class="message-decoration">
+                    <span>🌸</span><span>💙</span><span>🌸</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer flowers decoration -->
+        <div class="footer-flowers">
+            <svg class="footer-flower-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 Q50,0 100,60 Q150,0 200,60" fill="none" stroke="rgba(100,149,237,0.3)" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Music toggle -->
+    <button class="music-toggle" id="musicToggle" title="Reproducir música">
+        🎵
+    </button>
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0c6ff1bab.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
