@@ -736,7 +736,7 @@ musicToggle.addEventListener('click', () => {
         musicToggle.classList.remove('playing');
     } else {
         bgMusic.volume = 0.3;
-        bgMusic.play().catch(() => { });
+        bgMusic.play().catch(() => {});
         musicToggle.textContent = '🎶';
         musicToggle.classList.add('playing');
     }
